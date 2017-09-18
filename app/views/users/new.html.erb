@@ -31,6 +31,12 @@
     <%= password_field 'user', 'password_confirmation', class:'form-control' %>
   </div>
 
+  <div class="form-group">
+   <%= label(:user, :interests) %>
+   <%= text_area(:user, :interests, class:'form-control', placeholder: 'e.g: running skidiving') %>
+   <small class="form-text text-muted">Give a list of interests you like in words seperated with spaces. (minimum of 3 and maximum of 10 words).</small>
+  </div>
+
   <div class="actions">
     <%= form.submit 'Sign Up', class: 'btn btn-outline-primary' %>
   </div>
