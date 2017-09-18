@@ -4,6 +4,6 @@
 <%= image_tag @user.avatar.url(:square) %></br>
 <span><%= @user.name %></span></br>
 <div><%= @user.interests %></div>
+<div><%= @user.description %></div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
->>>>>>> add interests to users
 <%= link_to 'Back', users_path %>

@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170918184947) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string "interests"
+    t.string "description"
   end
 
 end

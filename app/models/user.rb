@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates :description, length: { maximum: 500 }
 
   validates :interests, presence: true
   validates_length_of :interests_word_count, minimum: 3, maximum: 10, too_short: "should at least be %{count} words", too_long: "should not be more than %{count} words"
@@ -26,6 +27,6 @@ class User < ApplicationRecord
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :salt, :encrypted_password, :interests)
+    params.require(:user).permit(:name, :email, :password, :salt, :encrypted_password, :interests, :description)
   end
 end
