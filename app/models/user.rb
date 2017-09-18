@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :password, length: { in: 4..20 }
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
+  validates :description, length: { maximum: 500 }
+
   def create
     @user = User.new(user_params)
   end
@@ -11,6 +13,6 @@ class User < ApplicationRecord
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :salt, :encrypted_password)
+    params.require(:user).permit(:name, :email, :password, :salt, :encrypted_password, :description)
   end
 end
