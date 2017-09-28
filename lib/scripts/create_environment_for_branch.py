@@ -14,11 +14,14 @@ cwd = os.getcwd()
 repo = Repo(cwd)
 git = repo.git
 origin = repo.remotes.origin
+print('checking out master branch')
+git.checkout('master')
+print('deleting ' + branch + ' branch if it exists')
+subprocess.call(["git", "branch", "-q", "-D", branch])
 print('getting latest code from origin')
 origin.pull()
 print('checking out branch ' + branch)
 git.checkout(branch)
-origin.pull()
 
 environment_name = branch.replace('_', '-')
 
