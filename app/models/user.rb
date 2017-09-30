@@ -1,17 +1,18 @@
 class User < ApplicationRecord
   # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :avatar, styles: {
-    square: '200x200#'
+      original: '2048x2048>',
+      square: '200x200#'
   }
 
   validates :name, :email, :password, :avatar, presence: true
   validates :email, uniqueness: true
-  validates :password, length: { in: 4..20 }
+  validates :password, length: {in: 4..20}
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  validates :description, length: { maximum: 500 }
+  validates :description, length: {maximum: 500}
 
   validates :interests, presence: true
   validates_length_of :interests_word_count, minimum: 3, maximum: 10, too_short: "should at least be %{count} words", too_long: "should not be more than %{count} words"
