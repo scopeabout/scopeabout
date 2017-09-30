@@ -5,7 +5,8 @@ class User < ApplicationRecord
       square: '200x200#'
   }
 
-  validates :name, :email, :password, :avatar, presence: true
+  validates :name, :email, :password, presence: true
+  validates :avatar, presence: {message: "has to be provided"}
   validates :email, uniqueness: true
   validates :password, length: {in: 4..20}
   validates :password, confirmation: true
