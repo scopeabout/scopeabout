@@ -1,0 +1,19 @@
+.mobile-nav-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  padding: 0.8em 0;
+}
+.mobile-nav-top li + li {
+  margin-left: 0px;
+}
+.mobile-nav-top li a {
+  text-align: center;
+  background: black;
+  color: #ecf0f1;
+}
+.mobile-nav-top li.active a {
+  color: #3498db;
+}

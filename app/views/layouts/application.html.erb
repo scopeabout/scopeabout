@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Socialproject</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
+<head>
+  <title>Socialproject</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+<body>
+<div class="mobile-nav-top">
+  <ul class="container nav nav-pills">
+    <li class="col-xs-4 col-sm-2">
+      <a href="<%= request.base_url %>">
+        <i class="fa fa-home fa-3x"></i><br>
+      </a>
+    </li>
+    <li class="col-xs-4 col-sm-2">
+      <a href="#">
+        <i class="fa fa-user fa-3x"></i><br>
+      </a>
+    </li>
+    <li class="col-xs-4 col-sm-2">
+      <a href="#">
+        <i class="fa fa-bolt fa-3x"></i><br>
+      </a>
+    </li>
+    <li class="col-xs-4 col-sm-2">
+      <a href="#">
+        <i class="fa fa-gear fa-3x"></i><br>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="container">
+  <%= yield %>
+</div>
+</body>
 </html>

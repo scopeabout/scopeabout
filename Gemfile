@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
