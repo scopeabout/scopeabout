@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<span><%= @user.name %></span>
+
+<%= image_tag @user.avatar.url(:square) %></br>
+<span><%= @user.name %></span></br>
+<div><%= @user.interests %></div>
+<div><%= @user.description %></div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
