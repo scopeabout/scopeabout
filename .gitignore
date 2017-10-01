@@ -32,4 +32,4 @@
 !.elasticbeanstalk/*.global.yml
 
 # ignore IDE and editors
-/.idea
+.idea/*
