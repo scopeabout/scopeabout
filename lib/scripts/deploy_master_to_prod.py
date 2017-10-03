@@ -12,9 +12,9 @@ cwd = os.getcwd()
 repo = Repo(cwd)
 git = repo.git
 origin = repo.remotes.origin
-print 'checking out master branch'
+print('checking out master branch')
 git.checkout('master')
 origin.pull()
-print 'deploying...'
+print('deploying...')
 subprocess.call(["eb","use", "socialproj-prod"])
 subprocess.call(["eb", "deploy"])
