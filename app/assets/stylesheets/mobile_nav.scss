@@ -9,6 +9,10 @@
 .mobile-nav-top li + li {
   margin-left: 0px;
 }
+.mobile-nav-top li {
+  max-width: 25%;
+  text-align: center;
+}
 .mobile-nav-top li a {
   text-align: center;
   background: black;
