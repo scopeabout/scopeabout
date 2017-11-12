@@ -5,6 +5,8 @@ class User < ApplicationRecord
       square: '200x200#'
   }
 
+  has_secure_password
+
   validates :name, :email, :password, presence: true
   validates :avatar, presence: {message: "has to be provided"}
   validates :email, uniqueness: true
@@ -29,6 +31,6 @@ class User < ApplicationRecord
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :salt, :encrypted_password, :interests, :description)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :interests, :description)
   end
 end

@@ -52,6 +52,7 @@ GEM
       aws-sdk-core (= 2.10.34)
     aws-sigv4 (1.0.1)
     bcrypt (3.1.11)
+    bcrypt (3.1.11-x64-mingw32)
     bindex (0.5.0)
     bootstrap (4.0.0.beta)
       autoprefixer-rails (>= 6.0.3)
@@ -82,6 +83,7 @@ GEM
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
+    ffi (1.9.18-x64-mingw32)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     globalid (0.4.0)
@@ -115,6 +117,8 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    nokogiri (1.8.0-x64-mingw32)
+      mini_portile2 (~> 2.2.0)
     paperclip (5.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -122,6 +126,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
     pg (0.21.0)
+    pg (0.21.0-x64-mingw32)
     popper_js (1.11.1)
     public_suffix (3.0.0)
     puma (3.10.0)
@@ -191,6 +196,8 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2017.2)
+      tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.5.1)
@@ -206,6 +213,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   aws-sdk (~> 2.3)
@@ -232,4 +240,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
