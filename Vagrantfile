@@ -13,6 +13,7 @@ $set_environment_variables = <<SCRIPT
     # AWS environment variables.
     export AWS_ACCESS_KEY_ID=#{ENV['SOCIALPROJ_AWS_ACCESS_KEY_ID']}
     export AWS_SECRET_ACCESS_KEY=#{ENV['SOCIALPROJ_AWS_SECRET_ACCESS_KEY']}
+    export PATH=LOCAL_PATH:$PATH
     EOF
 SCRIPT
 
@@ -78,6 +79,8 @@ Vagrant.configure("2") do |config|
     sudo apt-get purge postgresql-9.5
     sudo apt-get install libpq-dev
     sudo apt-get install -y imagemagick
+    sudo apt-get install -y python-pip
+    pip install awsebcli
   SHELL
 
   # config.vm.provision "shell", env: {"AWS_ACCESS_ID" => ENV['SOCIALPROJ_AWS_ACCESS_KEY_ID'], "AWS_ACCESS_KEY" => ENV['SOCIALPROJ_AWS_SECRET_ACCESS_KEY']}, inline: <<-SHELL
