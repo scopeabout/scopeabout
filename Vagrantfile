@@ -80,6 +80,7 @@ Vagrant.configure("2") do |config|
     sudo apt-get install libpq-dev
     sudo apt-get install -y imagemagick
     sudo apt-get install -y python-pip
+    pip install gitpython
     pip install awsebcli
   SHELL
 
