@@ -1,0 +1,11 @@
+<% title 'logged out successfully' %>
+<div class="text-center">
+  <h2>You have successfully logged out!</h2>
+</div>
+
+
+<script>
+    $(function () {
+        redirect_to('<%= root_path %>', 5000);
+    });
+</script>

@@ -29,4 +29,11 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def log_out
+    current_user.forget
+    session[:user_id] = nil
+    @current_user = nil
+    %w(user_id remember_token).each { |token| cookies.delete token }
+  end
 end
