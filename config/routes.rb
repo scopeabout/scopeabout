@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'welcome_page#welcome'
-  
+  get 'settings/index'
+
   get 'welcome_page/welcome'
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get 'register', to: 'users#new'
   resources 'users'
+  root 'welcome_page#welcome'
 end
