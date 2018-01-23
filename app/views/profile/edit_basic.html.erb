@@ -1,0 +1,35 @@
+<h1>Update Profile</h1>
+
+<%= form_with(model: @user, local: true, multipart: true, url: { action: 'edit_basic', controller: 'profile' }) do
+|form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @notice %>
+    <p><b><%= @notice %></b></p>
+  <% end %>
+
+  <div class="form-group">
+    <%= label(:user, :interests) %>
+    <%= text_area(:user, :interests, class: 'form-control', placeholder: 'e.g: running skidiving') %>
+    <small class="form-text text-muted">Give a list of interests you like in words seperated with spaces. (minimum
+      of 3 and maximum of 10 words).
+    </small>
+  </div>
+
+  <div class="form-group">
+    <%= label(:user, :description) %>
+    <%= text_area(:user, :description, class: 'form-control', placeholder: 'Tell us something about yourself (optional)') %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Save', class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>

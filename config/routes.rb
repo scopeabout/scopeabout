@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'settings/index'
 
+  get 'profile/edit_basic',   to: 'profile#edit_basic'
+  patch 'profile/edit_basic', to: 'profile#update_basic'
+
   get 'welcome_page/welcome'
   get 'sessions/new'
   get 'sessions/logout_success'
