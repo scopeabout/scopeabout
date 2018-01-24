@@ -16,6 +16,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
+    redirect_to sessions_logout_success_path
   end
 
   def session_params
