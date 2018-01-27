@@ -1,4 +1,49 @@
 <div>
+  <h1 class="page-title">Settings</h1>
+
+  <hr>
+
+  <% if @notice %>
+    <p><b><%= @notice %></b></p>
+  <% end %>
+
+  <div>
+    <h2>Update Password</h2>
+    <%= form_with(model: @user, local: true, multipart: true, url: { action: 'update_password', controller: 'settings' }) do
+    |form| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= label_tag 'old_password', 'Old Password' %>
+        <%= password_field_tag 'old_password', nil, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= label(:user, :title, 'New Password') %>
+        <%= password_field 'user', 'password', class: 'form-control', placeholder: 'Minimum of 4 letters.' %>
+      </div>
+
+      <div class="form-group">
+        <%= label(:user, :title, 'Repeat New Password') %>
+        <%= password_field 'user', 'password_confirmation', class: 'form-control', placeholder: 'Re-type the above password.' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit 'Save', class: 'btn btn-outline-primary' %>
+      </div>
+    <% end %>
+  </div>
+
+  <hr/>
+
   <p>You are logged in as <b><%= current_user.name %></b>. <%= link_to 'Logout', logout_path, class: 'btn
   btn-outline-primary', role: 'button' %></p>
 </div>
