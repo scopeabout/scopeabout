@@ -1,7 +1,10 @@
 class SettingsController < ApplicationController
-  before_action :set_user, only: [:index, :update_password]
+  before_action :set_user, only: [:edit_password, :update_password]
 
   def index
+  end
+
+  def edit_password
   end
 
   def update_password
@@ -13,7 +16,7 @@ class SettingsController < ApplicationController
       @user.errors.add(:old_password, 'is not matching')
     end
 
-    render :index
+    render :edit_password
   end
 
   private

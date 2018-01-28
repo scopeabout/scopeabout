@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'settings/index', to: 'settings#index'
-  get 'settings/update_password', to: 'settings#index'
+  get 'settings/update_password', to: 'settings#edit_password'
   patch 'settings/update_password', to: 'settings#update_password'
 
   get 'profile/edit_basic',   to: 'profile#edit_basic'
