@@ -21,7 +21,6 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"
   config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1"
 
-  config.vm.provision :shell, :path => "vagrant/database_ubuntu.sh"
   config.vm.provision :shell, inline: $set_environment_variables, run: 'always'
   config.vm.provision :shell, inline: <<-SHELL
     sudo apt-get update
@@ -35,4 +34,6 @@ Vagrant.configure("2") do |config|
     cd /vagrant
     bundler install
   SHELL
+
+  config.vm.provision :shell, :path => "vagrant/database_ubuntu.sh"
 end
