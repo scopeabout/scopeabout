@@ -13,7 +13,7 @@ class SettingsController < ApplicationController
         @notice = 'Password has been successfully updated!'
       end
     else
-      @user.errors.add(:old_password, 'is not matching')
+      @user.errors.add(:old_password, 'is incorrect')
     end
 
     render :edit_password
