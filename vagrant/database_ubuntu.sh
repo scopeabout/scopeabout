@@ -11,14 +11,14 @@ sudo -u postgres psql -tc "SELECT 1 FROM pg_database WHERE datname = '$DATABASE_
 sudo -su root
 
 # clear file content
-: > "/etc/postgresql/9.6/main/pg_hba.conf"
+: > "/etc/postgresql/9.5/main/pg_hba.conf"
 
-echo "local   all             postgres                                peer" >> "/etc/postgresql/9.6/main/pg_hba.conf"
-echo "local   all             $USERNAME                               trust" >> "/etc/postgresql/9.6/main/pg_hba.conf"
-echo "host    all             all           all                       trust" >> "/etc/postgresql/9.6/main/pg_hba.conf"
+echo "local   all             postgres                                peer" >> "/etc/postgresql/9.5/main/pg_hba.conf"
+echo "local   all             $USERNAME                               trust" >> "/etc/postgresql/9.5/main/pg_hba.conf"
+echo "host    all             all           all                       trust" >> "/etc/postgresql/9.5/main/pg_hba.conf"
 
 # Edit postgresql.conf to change listen address to '*'
-sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" "/etc/postgresql/9.6/main/postgresql.conf"
+sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" "/etc/postgresql/9.5/main/postgresql.conf"
 
 exit
 

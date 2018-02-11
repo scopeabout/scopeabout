@@ -16,7 +16,7 @@ export AWS_SECRET_ACCESS_KEY=#{ENV['SOCIALPROJ_AWS_SECRET_ACCESS_KEY']}
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.box = 'bento/ubuntu-17.04'
+  config.vm.box = 'ubuntu/xenial64'
 
   config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"
   config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1"
@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "vagrant/database_ubuntu.sh"
   config.vm.provision :shell, inline: $set_environment_variables, run: 'always'
   config.vm.provision :shell, inline: <<-SHELL
-    apt-get update
+    sudo apt-get update
     sudo apt-get install -y imagemagick
     sudo apt-get install -y postgresql postgresql-contrib libpq-dev
     sudo apt-get install -y build-essential nodejs ruby ruby-dev libgmp3-dev
