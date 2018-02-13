@@ -29,6 +29,7 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y build-essential nodejs ruby ruby-dev libgmp3-dev
     sudo gem install bundler
     sudo gem install rubocop
+    sudo gem install rake
 
     # run bundler on the project directory
     cd /vagrant
