@@ -5,4 +5,5 @@ json.partial! "users/user", user: @user  create_table "users", force: :cascade d
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "interests"
+    t.string "description"
   end
