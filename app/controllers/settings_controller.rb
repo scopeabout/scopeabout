@@ -9,7 +9,9 @@ class SettingsController < ApplicationController
 
   def update_password
     if @user.authenticate(params[:old_password])
-      if @user.update(user_params)
+      @user.password = user_params[:password]
+      @user.password_confirmation = user_params[:password_confirmation]
+      if @user.save(context: :password_update)
         @notice = 'Password has been successfully updated!'
       end
     else
