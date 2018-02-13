@@ -16,7 +16,7 @@ export AWS_SECRET_ACCESS_KEY=#{ENV['SOCIALPROJ_AWS_SECRET_ACCESS_KEY']}
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.box = 'ubuntu/xenial64'
+  config.vm.box = 'bento/ubuntu-17.10'
 
   config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"
   config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1"
