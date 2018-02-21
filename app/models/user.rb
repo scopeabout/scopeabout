@@ -10,9 +10,10 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :name, :email, presence: true
+  validates :name, :email, :current_job, :current_organization, :interests, presence: true
   validates :avatar, presence: {message: "has to be provided"}
   validates :email, uniqueness: true
+  validates :current_job, :current_organization, length: { maximum: 30 }
 
   validates :password, presence: true, on: :create
   validates :password, length: {in: 4..20}, on: :create
@@ -27,8 +28,10 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/, :size => { :less_than => 2.megabyte }
   validates :description, length: {maximum: 500}
 
-  validates :interests, presence: true
-  validates_length_of :interests_word_count, minimum: 3, maximum: 10, too_short: "should at least be %{count} words", too_long: "should not be more than %{count} words"
+  validates_length_of :interests_word_count, minimum: 3, maximum: 10,
+                      too_short: "should at least be %{count} words",
+                      too_long: "should not be more than %{count} words",
+                      if: -> { interests.present? }
 
   def create
     @user = User.new(user_params)
