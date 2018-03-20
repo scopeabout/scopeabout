@@ -11,7 +11,7 @@ sudo -u postgres psql -tc "SELECT 1 FROM pg_database WHERE datname = '$DATABASE_
 sudo -su root
 
 # clear file content
-: > "/etc/postgresql/9.6/main/pg_hba.conf"
+> "/etc/postgresql/9.6/main/pg_hba.conf"
 
 echo "local   all             postgres                                peer" >> "/etc/postgresql/9.6/main/pg_hba.conf"
 echo "local   all             $USERNAME                               trust" >> "/etc/postgresql/9.6/main/pg_hba.conf"
