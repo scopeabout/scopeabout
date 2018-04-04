@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :name, :email, :current_job, :current_organization, :interests, presence: true
   validates :avatar, presence: {message: "has to be provided"}
   validates :email, uniqueness: true
-  validates :current_job, :current_organization, length: { maximum: 30 }
+  validates :current_job, :current_organization, length: { maximum: 50 }
 
   validates :password, presence: true, on: :create
   validates :password, length: {in: 4..20}, on: :create
