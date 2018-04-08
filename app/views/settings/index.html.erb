@@ -1,4 +1,12 @@
 <div>
+  <h1 class="page-title">Settings</h1>
+
+  <div>
+    <a href="<%= settings_update_password_path %>">Update Password</a>
+  </div>
+
+  <hr/>
+
   <p>You are logged in as <b><%= current_user.name %></b>. <%= link_to 'Logout', logout_path, class: 'btn
   btn-outline-primary', role: 'button' %></p>
 </div>

@@ -13,10 +13,16 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
   validates :avatar, presence: {message: "has to be provided"}
   validates :email, uniqueness: true
-  validates :password, presence: true, if: -> { self.new_record? }
-  validates :password, length: {in: 4..20}, if: -> { self.new_record? }
-  validates :password, confirmation: true , if: -> { self.new_record? }
-  validates :password_confirmation, presence: true , if: -> { self.new_record? }
+
+  validates :password, presence: true, on: :create
+  validates :password, length: {in: 4..20}, on: :create
+  validates :password, confirmation: true , on: :create
+  validates :password_confirmation, presence: true , on: :create
+
+  validates :password, presence: true, on: :password_update
+  validates :password, length: {in: 4..20}, on: :password_update
+  validates :password, confirmation: true , on: :password_update
+  validates :password_confirmation, presence: true , on: :password_update
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/, :size => { :less_than => 2.megabyte }
   validates :description, length: {maximum: 500}
