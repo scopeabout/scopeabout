@@ -21,6 +21,16 @@
       <%= text_field(:user, :name, class: 'form-control', placeholder: 'This is visible to public.') %>
     </div>
 
+  <div class="form-group">
+    <%= label_tag(:current_job, 'Job Title') %>
+    <%= text_field(:user, :current_job, class: 'form-control', placeholder: 'Your current job title.') %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:current_organization, 'Organisation name') %>
+    <%= text_field(:user, :current_organization, class: 'form-control', placeholder: 'Your current organisation.') %>
+  </div>
+
     <div class="form-group">
       <%= label(:user, :password) %>
       <%= password_field 'user', 'password', class: 'form-control', placeholder: 'Minimum of 4 letters.' %>
