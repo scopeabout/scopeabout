@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
-  before_action :set_user, only: [:edit_password, :update_password]
+  before_action :set_user, only: [:edit_password, :update_password, :edit_profile_photo, :update_profile_photo]
 
   def index
   end
@@ -21,10 +21,21 @@ class SettingsController < ApplicationController
     render :edit_password
   end
 
+  def edit_profile_photo
+  end
+
+  def update_profile_photo
+    if @user.update(user_params)
+      redirect_to settings_index_url, notice: 'Photo updated.'
+    else
+      render :edit_profile_photo
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:password, :password_confirmation)
+    params.require(:user).permit(:password, :password_confirmation, :avatar)
   end
 
   def set_user
