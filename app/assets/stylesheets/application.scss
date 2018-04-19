@@ -1,6 +1,13 @@
 @import "bootstrap";
 @import "font-awesome";
-@import "sessions";
-@import "mobile_nav";
-@import "layout";
 @import "cropper";
+
+@import "layout";
+
+@import "alerts";
+@import "mobile_nav";
+
+@import "sessions";
+@import "site";
+@import "profile";
+@import "welcome_page";
