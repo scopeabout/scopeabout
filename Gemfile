@@ -37,7 +37,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
