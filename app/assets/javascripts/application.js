@@ -19,3 +19,4 @@
 //= require load-image.all.min.js
 //= require cropper.js
 //= require_tree .
+//= require serviceworker-companion
