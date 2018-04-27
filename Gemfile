@@ -39,6 +39,7 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'aws-sdk-s3'
 gem 'debase'
+gem 'serviceworker-rails'
 gem 'cookies_eu', git: 'https://github.com/sinaru/cookies_eu', ref: '472376be68de96b90e2249ac5f7133811d1e19a7'
 
 group :development, :test do
