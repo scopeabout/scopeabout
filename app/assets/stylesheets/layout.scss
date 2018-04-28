@@ -1,5 +1,6 @@
+@import "layout_components/*";
+
 body {
-  padding-top: 75px;
 }
 
 img {
@@ -8,4 +9,15 @@ img {
 
 .footer {
 
+}
+
+.top-fixed-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.container-after-top-fixed {
+  padding-top: 75px;
 }
