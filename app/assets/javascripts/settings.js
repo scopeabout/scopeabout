@@ -27,10 +27,10 @@ ProfilePhotoUpdateView = class ProfilePhotoUpdateView {
       this.renderImage.bind(this),
       {
         orientation: true,
-        maxWidth: 600,
-        maxHeight: 300,
-        minWidth: 100,
-        minHeight: 50,
+        maxWidth: 2048,
+        maxHeight: 2048,
+        minWidth: 1024,
+        minHeight: 1024,
         canvas: true
 
       }
