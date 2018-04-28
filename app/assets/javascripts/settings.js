@@ -40,6 +40,9 @@ ProfilePhotoUpdateView = class ProfilePhotoUpdateView {
   renderCropper(image) {
     this.cropper = new Cropper(image, {
       aspectRatio: 1,
+      viewMode: 2,
+      dragMode: 'move',
+      background: false,
       crop: this.setCroppedData.bind(this)
     });
   }
