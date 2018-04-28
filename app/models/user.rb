@@ -4,8 +4,8 @@ class User < ApplicationRecord
 
   # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :avatar, styles: {
-      original: '2048x2048>',
-      square: '200x200#'
+      original: ['2048x2048>', :jpg],
+      square: ['200x200#', :jpg]
   }
 
   has_secure_password

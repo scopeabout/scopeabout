@@ -35,14 +35,17 @@
   </ul>
 </nav>
 <div class="container">
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <%= message %>
-    </div>
-  <% end %>
+  <div class="flash-message-container row justify-content-center">
+    <% flash.each do |message_type, message| %>
+      <div class="col-6 alert alert-info alert-<%= message_type %> alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
   <%= yield %>
   <div class="footer">
     <div class="float-right">

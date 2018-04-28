@@ -1,0 +1,47 @@
+<div>
+  <h1 class="page-title">Settings</h1>
+  <hr>
+
+  <div>
+    <h2>Update Photo</h2>
+
+    <%= form_tag(class: 'form-group') do %>
+      <div id="image-holder">
+        <p>Current profile photo</p>
+        <%= image_tag @user.avatar.url(:square) %>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <%= file_field_tag 'avatar-file', id: 'avatar-upload', class: 'form-control-file', accept: 'image/png,image/gif,image/jpeg', 'aria-describedby': "fileHelp" %>
+        <small id="fileHelp" class="form-text text-muted">Provide an image that contains your face. Then crop select the boundry for the photo and save. </small>
+      </div>
+    <% end %>
+
+    <%= form_with(model: @user, local: true, multipart: true, url: {action: 'edit_profile_photo', controller: 'settings'}, html: {name: 'avatar-form'}) do
+    |form| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form.hidden_field('avatar', id: 'hidden-avatar-upload', value: '') %>
+
+      <div class="actions">
+        <%= form.submit 'Save', class: 'btn btn-outline-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_tag do %>
+  $(document).ready(() => {
+  var imageUrl ='<%= @user.avatar.url(:square) %>';
+  view = new ProfilePhotoUpdateView('image-holder', 'avatar-upload', 'hidden-avatar-upload', imageUrl);
+  })
+<% end %>
