@@ -10,4 +10,7 @@ class WelcomePageController < ApplicationController
 
   def cookies_consent
   end
+
+  def push_notifications
+  end
 end

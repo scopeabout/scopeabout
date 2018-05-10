@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'profile#show'
 
+  get '/push_notifications', to: 'welcome_page#push_notifications'
   get '/cookies', to: 'welcome_page#cookies_consent'
   get 'sessions/new'
   get 'sessions/logout_success'

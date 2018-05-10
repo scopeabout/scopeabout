@@ -1,0 +1,18 @@
+<% if logged_in? && cookies && cookies['push_notification_consented'] == nil %>
+  <div id="push-notification-consent-wrapper" class="alert alert-warning fade show" style="display: none" role="alert">
+    <a href="#" class="trigger" data-dismiss="alert">Click here</a> to enable push notifications.
+    <a href="<%= push_notifications_url %>">Learn more</a> |
+    <a class="never-show" data-dismiss="alert" aria-label="Close" href="#">never show</a> |
+    <a class="hide" data-dismiss="alert" aria-label="Close" href="#">hide</a>
+  </div>
+  <script>
+    (function () {
+      new PushNotificationConsentHandler({
+        wrapperEl: document.querySelector('#push-notification-consent-wrapper'),
+        triggerEl: document.querySelector('#push-notification-consent-wrapper .trigger'),
+        hideEl: document.querySelector('#push-notification-consent-wrapper .hide'),
+        neverShowEl: document.querySelector('#push-notification-consent-wrapper .never-show')
+      });
+    })();
+  </script>
+<% end %>
