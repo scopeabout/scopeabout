@@ -43,11 +43,28 @@
 
   <div class="form-group">
     <label for="user_avatar_file">Profile Photo</label>
-    <%= form.file_field 'avatar', id: 'avatar_upload', accept: 'image/png,image/gif,image/jpeg', 'aria-describedby': "fileHelp" %>
-    <small id="fileHelp" class="form-text text-muted">Provide an image that contains your face. Make sure the image is
-      a square.
-    </small>
+
+    <div id="image-holder">
+    </div>
+    <div class="form-group">
+      <%= file_field_tag 'avatar-file',
+                         id: 'avatar-upload',
+                         class: 'form-control-file',
+                         accept: 'image/png,image/gif,image/jpeg',
+                         'aria-describedby': "fileHelp" %>
+      <small id="fileHelp" class="form-text text-muted">Provide an image that contains your face. Then crop select the
+        boundary for the photo.
+      </small>
+    </div>
+    <%= form.hidden_field('avatar', id: 'hidden-avatar-upload', value: '') %>
   </div>
+
+  <%= javascript_tag do %>
+    $(document).ready(() => {
+    var imageUrl ='<%= @user.avatar.url(:square) %>';
+    view = new ProfilePhotoUpdateView('image-holder', 'avatar-upload', 'hidden-avatar-upload', imageUrl);
+    })
+  <% end %>
 
   <div class="form-group">
     <%= label(:user, :interests) %>
