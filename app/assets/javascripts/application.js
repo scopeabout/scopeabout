@@ -15,6 +15,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require cookies_eu
 //= require load-image.all.min.js
 //= require cropper.js
 //= require_tree .
