@@ -4,6 +4,7 @@ $primary-white: #fff;
 
 body.landing-page {
   padding-top: auto;
+  background-color: $primary-blue;
 
   .nav-row {
     background-color: $primary-blue;
@@ -49,7 +50,6 @@ body.landing-page {
   }
 
   .banner:after {
-    background-color: $primary-blue;
     background-size: 100%;
     background-repeat: no-repeat;
     content: "";
@@ -105,23 +105,27 @@ body.landing-page {
   }
 
   .network {
-    margin-top: 4em;
+    padding-top: 4em;
     padding-bottom: 1em;
   }
 
   .community {
-    margin-top: 4em;
+    padding-top: 4em;
     padding-bottom: 1em;
   }
 
 
   .stay-in-touch {
-    margin-top: 4em;
+    padding-top: 4em;
     padding-bottom: 1em;
 
     .social-media-links {
       a {
         padding: 2px;
+      }
+
+      img {
+        height: 3em;
       }
     }
   }
