@@ -1,0 +1,129 @@
+
+$primary-blue: #419AE8;
+$primary-white: #fff;
+
+body.landing-page {
+  padding-top: auto;
+
+  .nav-row {
+    background-color: $primary-blue;
+    padding: 1rem;
+
+    .landing-page-logo {
+      height: 3.5em;
+    }
+
+
+    .landing-page-top-nav {
+      padding: 0;
+
+      .navbar-collapse {
+        text-align: right;
+      }
+
+      .nav-link {
+        color: $primary-white;
+      }
+    }
+  }
+
+  .flex-banner {
+    padding: 0.5em 0;
+  }
+
+  .banner-primary {
+    background-color: $primary-blue;
+
+    .title {
+      font-size: 3em;
+      font-weight: bold;
+    }
+  }
+
+  .banner {
+    display: block;
+    position: relative;
+    font-size: 2rem;
+    color: $primary-white;
+    padding: 1.4rem;
+  }
+
+  .banner:after {
+    background-color: $primary-blue;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    content: "";
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+
+    border-radius: 1.4em 0 0 1.4em;
+  }
+
+  .flex-section {
+    display: block;
+  }
+
+  .section-1 {
+    position: relative;
+    height: 800px;
+  }
+
+  .section-1::after {
+    background-image: url("landing-page/woman-man-coffee.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    content: "";
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+  }
+
+  .banner-right-align {
+    margin-right: 0 !important;
+  }
+
+  .introducing {
+    text-align: center;
+
+    .title {
+      font-size: 3.5em;
+      font-weight: bold;
+    }
+    .join-us-for-free {
+      color: $primary-blue;
+      font-size: 1.3em;
+    }
+  }
+
+  .network {
+    margin-top: 4em;
+    padding-bottom: 1em;
+  }
+
+  .community {
+    margin-top: 4em;
+    padding-bottom: 1em;
+  }
+
+
+  .stay-in-touch {
+    margin-top: 4em;
+    padding-bottom: 1em;
+
+    .social-media-links {
+      a {
+        padding: 2px;
+      }
+    }
+  }
+
+}

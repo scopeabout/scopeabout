@@ -1,6 +1,6 @@
 @import "layout_components/*";
 
-body {
+body.front-app {
 }
 
 img {
@@ -9,6 +9,10 @@ img {
 
 .footer {
 
+}
+
+.no-padding {
+  padding: 0;
 }
 
 .top-fixed-container {

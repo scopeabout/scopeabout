@@ -1,6 +1,11 @@
 class WelcomePageController < ApplicationController
+
+  def app
+    render 'app'
+  end
+
   def welcome
-    puts 'hi'
+    render 'landing_page', layout: false
   end
 
   def cookies_consent
