@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ScopeAbout - <%= content_for?(:title) ? yield(:title) : 'Connecting people and activities' %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="landing-page">
+<div class="container-fluid">
+  <div class="nav-row row">
+    <div class="col-lg-6 col-3">
+      <a href="<%= root_url %>">
+        <%= image_tag "landing-page/nav-logo-white.png", class: 'landing-page-logo' %>
+      </a>
+    </div>
+
+    <div class="col-lg-6 col-9">
+      <nav class="landing-page-top-nav navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= request.base_url %>">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>How it works?</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.scopeabout.com/blog">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center banner-primary introducing">
+    <div class="col-lg-5">
+      <%= image_tag "landing-page/girl-using-photo.png" %><br/>
+      <small>Vector Art by <a href="https://vecteezy.com">Vecteezy!</a></small>
+    </div>
+    <div class="col-lg-4 align-self-top text-light">
+      <div>
+        <div class="title">Introducing ScopeAbout</div>
+        <p>We help you to create community with like minded professionals.</p>
+        <p>The world is now your community.</p>
+
+        <button class="btn btn-light join-us-for-free" type="submit">Join us for Free</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center banner-primary network">
+
+
+    <div class="col-lg-4 align-self-center text-light">
+      <div>
+        <div class="title">Network</div>
+      </div>
+      <div>
+        <p>Interact with other professionals about their interests and aspirations in their natural space.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <%= image_tag "landing-page/community-people.png" %><br/>
+      <small>Vector Art by <a href="https://vecteezy.com">Vecteezy!</a></small>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center banner-primary community text-center">
+    <div class="col-lg-4 text-light">
+      <div>
+        <div class="title text-center">Community</div>
+        <%= image_tag "landing-page/people-solar-eclipse.png" %><br/>
+        <small>Vector Art by <a href="https://vecteezy.com">Vecteezy!</a></small>
+        <div>
+          <p>
+            Create sessions based on shared interest.
+          </p>
+          <p>
+            whether it is about technology, a charity event, or a carpool to your place.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row flex-section section-1" style="display: none;">
+    <div style="height: 30%"></div>
+
+    <div class="d-flex justify-content-end flex-banner">
+      <span class="banner">We connect you with like minded professionals.</span>
+    </div>
+
+    <div class="d-flex justify-content-end flex-banner">
+      <span class="banner">The world is now your community.</span>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center banner-primary stay-in-touch">
+    <div class="col-lg-5">
+      <%= image_tag "landing-page/freelancer.png" %><br/>
+      <small>Vector Art by <a href="https://vecteezy.com">Vecteezy!</a></small>
+      <div class="social-media-links">
+        <a href="https://www.instagram.com/scopeabout/" target="_blank"><%= image_tag "landing-page/instagram-logo.png" %></a>
+        <a href="https://twitter.com/ScopeAbout" target="_blank"><%= image_tag "landing-page/twitter-logo.png" %></a>
+        <a href="https://www.linkedin.com/company/scopeabout" target="_blank"><%= image_tag "landing-page/linkedin-logo.png" %></a>
+        <a href="https://www.facebook.com/ScopeAbout/" target="_blank"><%= image_tag "landing-page/facebook-logo.png" %></a>
+      </div>
+    </div>
+    <div class="col-lg-4 align-self-center text-light">
+      <div>
+        <div class="title">Stay in touch</div>
+      </div>
+      <div>Join our mailing list. </br>  Never miss an update.</div>
+
+      <br/>
+
+      <form class="subscribe-form">
+        <div class="form-group">
+          <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-light">We'll never share your email with anyone else.</small>
+        </div>
+        <button type="submit" class="btn btn-block btn-primary">Subscribe Now</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="p-4 footer d-flex justify-content-center">
+    <div>
+      <small>ScopeAbout &copy; 2018</small>
+    </div>
+  </div>
+</div>
+</body>
+</html>

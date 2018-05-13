@@ -10,14 +10,14 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'profile#show'
 
-  get 'welcome_page/welcome'
   get '/cookies', to: 'welcome_page#cookies_consent'
   get 'sessions/new'
   get 'sessions/logout_success'
+  get '/welcome', to: 'welcome_page#welcome'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'register', to: 'users#new'
   resources 'users'
-  root 'welcome_page#welcome'
+  root 'welcome_page#app'
 end
