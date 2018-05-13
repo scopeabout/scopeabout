@@ -1,24 +1,30 @@
-# README
+# ScopeAbout Web App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the repository of the app that serve [scopeabout.com](https://prod.scopeabout.com/). 
+The App runs as a Rails 5 app with a PostgreSQL 9.6 database. 
 
-Things you may want to cover:
+## Local Development
 
-* Ruby version
+For local development, we use Vagrant for the project. Therefore to get started you should have following installed in
+your machine. 
 
-* System dependencies
+- VirtualBox 5.2
+- Vagrant 2.0.x
 
-* Configuration
+Then you would need to add following environment variables with appropriate values. 
 
-* Database creation
+```
+SOCIALPROJ_AWS_ACCESS_KEY_ID
+SOCIALPROJ_AWS_SECRET_ACCESS_KEY
+S3_BUCKET
+```
 
-* Database initialization
+Then simply run vagrant up to create the environment and provision the environment.
 
-* How to run the test suite
+```
+vagrant up --provision
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Then you can ssh into the vagrant instance and navigate to the `/vagrant` folder where our app code resides. 
 
-* Deployment instructions
-
-* ...
+Here you can can run any pending migrations and start up the application by running `rails s`. 
