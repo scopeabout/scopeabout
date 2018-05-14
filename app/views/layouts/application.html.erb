@@ -40,6 +40,7 @@
 <div class="container-after-top-fixed container">
   <%= render 'cookies_eu/consent_banner', link: '/cookies' %>
   <div class="flash-message-container row justify-content-center">
+    <%= render('components/push_notification_conent') %>
     <% flash.each do |message_type, message| %>
       <div class="col-6 alert alert-info alert-<%= message_type %> alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">

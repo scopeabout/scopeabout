@@ -18,4 +18,5 @@
 //= require cookies_eu
 //= require load-image.all.min.js
 //= require cropper.js
+//= require js.cookie.js
 //= require_tree .
