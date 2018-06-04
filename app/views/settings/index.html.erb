@@ -1,13 +1,30 @@
-<div>
-  <h1 class="page-title">Settings</h1>
-
+<div id="settings-page-wrapper">
   <div>
-    <a href="<%= settings_update_password_path %>">Update Password</a>
-    <a href="<%= settings_update_profile_photo_path %>">Update Profile Photo</a>
+    <h2>Profile</h2>
+
+    <p>You are logged in as <b><%= current_user.name %></b>. <%= link_to 'Logout', logout_path, class: 'btn
+          btn-outline-primary', role: 'button' %></p>
+
+    <ul class="setting-list">
+      <li>
+        <i class="fa fa-user-circle"></i> <a href="<%= profile_path %>">View Profile</a>
+      </li>
+    </ul>
+    <hr/>
   </div>
 
-  <hr/>
+  <div>
+    <h2 class="page-title">Settings</h2>
 
-  <p>You are logged in as <b><%= current_user.name %></b>. <%= link_to 'Logout', logout_path, class: 'btn
-  btn-outline-primary', role: 'button' %></p>
+    <ul class="setting-list">
+      <li>
+        <i class="fa fa-key"></i> <a href="<%= settings_update_password_path %>">Update Password</a>
+      </li>
+      <li>
+        <i class="fa fa-camera-retro"></i>
+        <a href="<%= settings_update_profile_photo_path %>">Update Profile Photo</a><br>
+      </li>
+    </ul>
+    <hr/>
+  </div>
 </div>

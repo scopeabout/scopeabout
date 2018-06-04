@@ -1,14 +1,21 @@
+// third party
 @import "bootstrap";
 @import "font-awesome";
 @import "cropper";
-
 @import "cookies_eu";
+
+@import 'global_variables';
+
+// components
 
 @import "layout";
 @import "alerts";
 
+// pages
 @import "landing_page";
 
+
+// sections
 @import "sessions";
 @import "settings";
 @import "site";
