@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
+
+body {
+    background:#3d9aea;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 2em;
+    font-size: 2em;
+    letter-spacing: 3px;
+}
+
+h4 {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 2em;
+    font-size: 1em;
+    letter-spacing: 4px;
+}
+
+a{
+
+    font-weight:bold;
+    color:#ffffff;
+}
+
