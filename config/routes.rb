@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'register', to: 'users#new'
   resources 'users'
-  root 'welcome_page#app'
+  root 'welcome_page#welcome'
 end
