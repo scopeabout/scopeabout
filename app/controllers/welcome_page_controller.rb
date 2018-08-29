@@ -5,7 +5,11 @@ class WelcomePageController < ApplicationController
   end
 
   def welcome
-    render 'landing_page', layout: false
+    if logged_in?
+      render 'app'
+    else
+      render 'landing_page', layout: false
+    end
   end
 
   def cookies_consent
