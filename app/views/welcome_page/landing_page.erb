@@ -3,6 +3,7 @@
 <head>
   <title>ScopeAbout - <%= content_for?(:title) ? yield(:title) : 'Connecting people and activities' %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="<%= asset_path 'favicon.png' %>">
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -155,6 +156,8 @@
       <small>ScopeAbout &copy; 2018</small>
     </div>
   </div>
+
+  <%= render 'cookies_eu/consent_banner', link: '/cookies' %>
 </div>
 </body>
 </html>
