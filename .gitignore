@@ -34,3 +34,6 @@
 # IDE and editors
 .idea/*
 .vscode/*
+
+# Ignore Python virtual environment
+env/*
