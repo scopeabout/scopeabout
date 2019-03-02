@@ -1,5 +1,7 @@
 class WelcomePageController < ApplicationController
 
+  layout proc { logged_in? ? 'application' : 'guest' }
+
   def app
     render 'app'
   end
@@ -8,7 +10,7 @@ class WelcomePageController < ApplicationController
     if logged_in?
       render 'app'
     else
-      render 'landing_page', layout: false
+      render 'landing_page'
     end
   end
 
