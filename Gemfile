@@ -37,7 +37,7 @@ gem 'bootsnap'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'paperclip'
