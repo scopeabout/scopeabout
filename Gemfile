@@ -44,7 +44,7 @@ gem 'paperclip'
 gem 'aws-sdk-s3'
 gem 'debase'
 gem 'cookies_eu', git: 'https://github.com/sinaru/cookies_eu', ref: '472376be68de96b90e2249ac5f7133811d1e19a7'
-
+gem 'mini_racer'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
