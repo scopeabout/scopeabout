@@ -11,7 +11,7 @@ module Org
     end
 
     def get_organization
-      @current_organization = Org::Organization.find_by_subdomain(request.subdomain)
+      @current_organization = Org::Organization.find_by_subdomain(first_subdomain)
       not_found unless @current_organization
     end
 
@@ -21,6 +21,10 @@ module Org
 
     def access_denied
       render 'org/organization/401', status: 401, layout: nil
+    end
+
+    def first_subdomain
+      request.subdomain.split('.').first
     end
   end
 end
