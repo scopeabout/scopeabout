@@ -14,9 +14,9 @@ module SessionsHelper
   # Returns the current logged-in user (if any).
   def current_user
     if (user_id = session[:user_id])
-      @current_user ||= User.find_by(id: user_id)
+      @current_user ||= user_class.find_by(id: user_id)
     elsif (cookies && user_id = cookies.signed[:user_id])
-      user = User.find_by(id: user_id)
+      user = user_class.find_by(id: user_id)
       if user && user.authenticated?(cookies[:remember_token])
         log_in user
         @current_user = user
@@ -35,5 +35,11 @@ module SessionsHelper
     session[:user_id] = nil
     @current_user = nil
     %w(user_id remember_token).each { |token| cookies.delete token }
+  end
+
+  private
+
+  def user_class
+    request.subdomain.present? ? Org::OrganizationUser : User
   end
 end

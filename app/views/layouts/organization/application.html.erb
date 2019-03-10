@@ -13,26 +13,29 @@
 <body class="front-app">
 <div class="top-fixed-container">
 <nav class="mobile-nav-top navbar navbar-expand">
-  <ul class="container nav nav-pills">
-    <li class="col-xs-3 col-sm-3">
+  <ul class="container navbar-nav">
+    <li class="nav-item col-xs-3 col-sm-3">
       <a href="<%= request.base_url %>">
         <i class="fa fa-home fa-3x"></i><br>
       </a>
     </li>
-    <li class="col-xs-3 col-sm-3">
-      <a href="#">
-        <i class="fa fa-user fa-3x"></i><br>
-      </a>
-    </li>
-    <li class="col-xs-3 col-sm-3">
+    <li class="nav-item col-xs-3 col-sm-3">
       <a href="#">
         <i class="fa fa-coffee fa-3x"></i><br>
       </a>
     </li>
-    <li class="col-xs-3 col-sm-3">
+    <li class="nav-item col-xs-3 col-sm-3">
       <a href="#">
         <i class="fa fa-envelope-o fa-3x"></i><br>
       </a>
+    </li>
+    <li class="nav-item dropdown col-xs-3 col-sm-3">
+      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-user fa-3x"></i><br>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="<%= logout_path %>">Log out</a>
+      </div>
     </li>
   </ul>
 </nav>
@@ -52,13 +55,7 @@
   </div>
 
   <%= yield %>
-  <div class="footer">
-    <div class="float-right">
-      <% if logged_in? %>
-        <a href="#" class="btn btn-secondary"><i class="fa fa-cog"></i> Settings</a>
-      <% end %>
-    </div>
-  </div>
+
 </div>
 </body>
 </html>

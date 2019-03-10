@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ScopeAbout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="<%= asset_path 'favicon.png' %>">
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="landing-page">
+<div class="container-fluid">
+  <div class="nav-row row">
+    <div class="col-lg-6 col-3">
+      <a href="<%= root_url %>">
+        <%= image_tag "landing-page/nav-logo.png", class: 'landing-page-logo' %>
+      </a>
+    </div>
+
+    <div class="col-lg-6 col-9">
+      <nav class="landing-page-top-nav navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= @base_home_page %>">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>How it works?</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <%= yield %>
+
+  <div class="p-4 footer d-flex justify-content-center">
+    <div>
+      <small>ScopeAbout &copy; <%= Date.current.year %></small>
+    </div>
+  </div>
+
+  <%= render 'cookies_eu/consent_banner', link: '/cookies' %>
+</div>
+</body>
+</html>
