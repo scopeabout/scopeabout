@@ -4,7 +4,7 @@ USERNAME=master
 DATABASE_DEVELOPMENT=socialproject_development
 DATABASE_TEST=socialproject_test
 
-sudo -u postgres psql -c "CREATE ROLE $USERNAME SUPERUSER LOGIN;"
+sudo -u postgres psql -c "CREATE ROLE $USERNAME SUPERUSER LOGIN PASSWORD 'password1';"
 sudo -u postgres psql -tc "SELECT 1 FROM pg_database WHERE datname = '$DATABASE_DEVELOPMENT'" | grep -q 1 || sudo -u postgres psql -c "CREATE DATABASE $DATABASE_DEVELOPMENT OWNER $USERNAME"
 sudo -u postgres psql -tc "SELECT 1 FROM pg_database WHERE datname = '$DATABASE_TEST'" | grep -q 1 || sudo -u postgres psql -c "CREATE DATABASE $DATABASE_TEST OWNER $USERNAME"
 
