@@ -34,3 +34,6 @@ en:
       attributes:
         user:
           avatar: "Profile Photo"
+
+        session_feed:
+          body: 'text content'
