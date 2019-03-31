@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   scope module: 'org' do
     constraints OrganizationRouteConstrains.new do
-      get '/', to: 'feeds#index'
+      get '/', to: 'session_feeds#index'
+      post 'create', action: :create, controller: 'session_feeds'
       get '/login', to: 'user_sessions#new'
       post '/login', to: 'user_sessions#create'
       get 'logout', to: 'user_sessions#destroy'
