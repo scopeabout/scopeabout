@@ -1,0 +1,25 @@
+<h1><%= @current_organization.name %> Feeds</h1>
+
+<%= render 'form' %>
+
+<% @existing_feeds.each do |feed| %>
+
+  <div class="session-feed">
+    <p class="content">
+      <%= feed.body %>
+    </p>
+
+    <% if feed.attachment.attached? %>
+      <div class="attachment">
+        <span><i><%= feed.attachment.filename %></i></span>
+        <a class="btn btn-primary btn-sm" role="button" href="<%= url_for(feed.attachment) %>" download> Download</a>
+      </div>
+    <% end %>
+
+    <div class="submitter">
+      Submitted by: <%= feed.created_by.present? ? feed.created_by.name : ''%>
+    </div>
+
+  </div>
+
+<% end %>

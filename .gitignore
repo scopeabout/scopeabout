@@ -8,6 +8,8 @@
 
 .vagrant/*
 
+storage/*
+
 # Ignore bundler config.
 /.bundle
 

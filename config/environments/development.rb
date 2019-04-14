@@ -50,6 +50,11 @@ Rails.application.configure do
 
   config.file_watcher = ActiveSupport::FileUpdateChecker
 
+  config.reload_classes_only_on_change = false
+
+  # Store files locally.
+  config.active_storage.service = :local
+
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {

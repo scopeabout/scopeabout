@@ -25,9 +25,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, inline: $set_environment_variables, run: 'always'
   config.vm.provision :shell, inline: <<-SHELL
     sudo apt-get update
-    sudo apt-get install -y imagemagick
-    sudo apt-get install -y postgresql postgresql-contrib libpq-dev
-    sudo apt-get install -y build-essential nodejs ruby ruby-dev libgmp3-dev
+    sudo apt install -y nfs-kernel-server
+    sudo apt install -y imagemagick
+    sudo apt install -y postgresql postgresql-contrib libpq-dev
+    sudo apt install -y build-essential nodejs ruby ruby-dev libgmp3-dev
     sudo gem install rake
     sudo gem install bundler
     sudo gem install rubocop
@@ -58,4 +59,7 @@ Vagrant.configure("2") do |config|
   SHELL
 
   config.vm.provision :shell, :path => "vagrant/database_ubuntu.sh"
+
+  config.vm.network "private_network", ip: "192.168.10.101"
+  config.vm.synced_folder ".", "/vagrant", type: "nfs"
 end
