@@ -1,10 +1,11 @@
 module Org
   class OrganizationUser < ApplicationRecord
-    belongs_to :organizations
+
+    belongs_to :organization, class_name: 'Org::Organization'
+    has_many :session_feeds, class_name: 'Org::SessionFeed', foreign_key: 'created_by_id'
 
     attr_accessor :remember_token
 
-    has_secure_password
 
     validates :name, :email, :current_job, :current_organization, :interests, presence: true
     validates :email, uniqueness: true
@@ -26,6 +27,7 @@ module Org
                         too_short: "should at least be %{count} words",
                         too_long: "should not be more than %{count} words",
                         if: -> { interests.present? }
+    has_secure_password
 
     def create
       @user = OrganizationUser.new(organization_user_params)
