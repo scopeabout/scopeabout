@@ -1,9 +1,10 @@
 module Org
   class SessionFeedsController < OrganizationController
+
     def index
       @session_feed = SessionFeed.new
 
-      @existing_feeds = SessionFeed.all.order(created_at: :desc)
+      @existing_feeds = @current_organization.session_feeds.order(created_at: :desc)
     end
 
     def create
