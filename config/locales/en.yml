@@ -37,3 +37,7 @@ en:
 
         session_feed:
           body: 'text content'
+  new_user: "New User"
+  edit: "Edit"
+  show: "Show"
+  destroy: "Destroy"

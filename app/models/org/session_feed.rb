@@ -1,14 +1,16 @@
 module Org
   class SessionFeed < ApplicationRecord
 
-    before_validation :set_user_track
-
     belongs_to :created_by, :class_name => 'Org::OrganizationUser', foreign_key: 'created_by_id'
     belongs_to :updated_by, :class_name => 'Org::OrganizationUser', foreign_key: 'updated_by_id'
+
+    before_validation :set_user_track
 
     has_one_attached :attachment
 
     attr_accessor :current_user
+
+    private
 
     def set_user_track
       set_created_by if new_record?

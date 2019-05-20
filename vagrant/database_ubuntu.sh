@@ -20,6 +20,6 @@ echo "host    all             all           all                       trust" >> 
 # Edit postgresql.conf to change listen address to '*'
 sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" "/etc/postgresql/9.6/main/postgresql.conf"
 
-exit
-
 sudo service postgresql restart
+
+exit
