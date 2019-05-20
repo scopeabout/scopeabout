@@ -17,7 +17,7 @@
     <% end %>
 
     <div class="submitter">
-      Submitted by: <%= feed.created_by.present? ? feed.created_by.name : ''%>
+      <%= "Submitted by: #{feed.created_by&.name} at #{feed.created_at.strftime('%R %d-%m-%Y')}" %>
     </div>
 
   </div>
